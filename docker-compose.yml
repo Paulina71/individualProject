@@ -1,21 +1,19 @@
-version: '3.7'
-
+version: '3.7' 
 services:
-  web: 
+  web:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile 
     volumes:
-      - ./:/opt/redis_data
+      - ./:/opt/redis_data 
     ports:
-      - "80:8888"
+      - "80:8888" 
     environment:
-      CONTAINER_TYPE: web
-
-redis:
-  image: redis:5.0.6-alpine
-  ports:
-    - target: 6379
-      published: 6379
-  expose:
-    - 6379
+      CONTAINER_TYPE: web 
+  redis:
+    image: redis:5.0.6-alpine 
+    ports:
+      - target: 6379 
+        published: 6379 
+    expose:
+      - 6379
